@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}RegMarket | Settings{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'include/sidebar.css' %}">
+{% endblock extra_css %}
+
+{% block sidebar %}
+    {% include "parts/sidebar.html" %}
+{% endblock sidebar %}
+
+
+{% block content %}
+    <div class="home">
+        <div class="container">
+
+            <a href="{% url 'currency' %}">
+                <div class="sections">
+                    <h1>Currency</h1>
+                </div>
+            </a>
+
+            <a href="{% url 'receipts_history' %}">
+                <div class="sections">
+                    <h1>Receipts history</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/settings.js' %}"></script>
+{% endblock extra_js %}

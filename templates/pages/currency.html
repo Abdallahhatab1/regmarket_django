@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}RegMarket | Currency{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/currency.css' %}">
+{% endblock extra_css %}
+
+{% block back_button %}
+    <div class="back_button" onclick="window.location.href = '{% url 'settings' %}' ">
+        <img src="{% static 'css/svgs/back_icon.svg' %}" alt="back_icon">
+    </div>
+{% endblock back_button %}
+
+{% block content %}
+    <div class="home">
+        <div class="container">
+            
+            <div class="sections">
+                <img src="/static/css/svgs/change_currency_icon.svg" alt="change_currency_icon">
+                <h1>Change currency</h1>
+                <input type="text" id="dollar_input" placeholder="dollar" value="$ 1" readonly>
+                <input type="text" id="current_currency" placeholder="Add change" readonly>
+                
+                <form id='editValueForm'  class="edit_value_div" method="POST" action="{% url 'update_currency_value' %}">
+                    {% csrf_token %}
+                   <input type="number"  id='edit_value_input' name="new_value" placeholder="Enter new value" step="0.01" required>
+                    <button type='submit' id='edit_button'>Edit Value</button>
+                </form>
+
+                <input type="text" id="new_value_input" placeholder="Add new value">
+
+                <input onkeyup="search_currencies()" type="text" id="search_input" placeholder="search by name or country">
+            </div>
+
+            <table>
+                
+                <thead class="items_thead">
+                    <tr>
+                        <th>Name</th>
+                        <th>Sympol</th>
+                        <th>Country</th>
+                        <th>Value per dollar</th>
+                    </tr>
+                </thead>
+
+                <tbody class="items_tbody">
+                
+                
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/currency.js' %}"></script>
+{% endblock extra_js %}

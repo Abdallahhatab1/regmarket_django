@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}RegMarket | Profile{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock extra_css %}
+
+{% block sidebar %}
+    {% include "parts/sidebar.html" %}
+{% endblock sidebar %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="background" style="background-image: url('{{ profile.background.url }}');">
+
+
+            <img class="image" width='150px' src="{{ profile.image.url }}" alt="Profile Image" width="200">
+        </div>
+
+        <div class="inputes">
+            <h2>First Name: </h2>
+            <input type='text' value='{{profile.first_name}}'></input>
+        </div>
+
+        <div class="inputes">
+            <h2>Last Name: </h2>
+            <input type='text' value='{{profile.last_name}}'></input>
+        </div>
+        
+        <div class="inputes">
+            <h2>Market Name: </h2>
+            <input type='text' value='{{profile.market_name}}'></input>
+        </div>
+
+        <button type='button' id='first_name_button'>Apply changes</button>
+
+        
+        <div class="inputes">
+            <h2>Username: </h2>
+            <input type='text' value='{{profile.user}}' readonly></h3>
+        </div>
+        
+        <div class="inputes">
+            <h2>Birthdate</h2>
+            <input type='text' value='{{profile.birthdate}}' readonly> </h3>
+        </div>
+        
+        <div class="inputes">
+            <h2>Gender</h2>
+            <input type='text' value='{{profile.gender}}' readonly></input>
+        </div>
+
+    </div>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock extra_js %}

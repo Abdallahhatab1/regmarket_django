@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}RegMarket | Current Date{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/current_recipes.css' %}">
+{% endblock extra_css %}
+
+{% block back_button %}
+    <div class="back_button" onclick="window.location.href = '{% url 'receipts_history' %}' ">
+        <img src="{% static 'css/svgs/back_icon.svg' %}" alt="back_icon">
+    </div>
+{% endblock back_button %}
+
+
+{% block content %}
+    <div class="home">
+        <div class="container">
+
+            <div class="sections">
+                <input type="text" id="new_value_input" placeholder="Add new value">
+                <input onkeyup="getSearch()" type="text" id="search_input" placeholder="search by name or time">
+            </div>
+
+            <table>
+                
+                <thead class="items_thead">
+                    <tr>
+                        <th>id</th>
+                        <th>Receipts-time</th>
+                        <th>Customer-name</th>
+                        <th>Total-price</th>
+                    </tr>
+                </thead>
+
+                <tbody class="items_tbody">
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/current_recipes.js' %}"></script>
+{% endblock extra_js %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}RegMarket | Add product{% endblock %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'include/back_button.css' %}">
+    <link rel="stylesheet" href="{% static 'include/confirm_delete.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+{% endblock extra_css %}
+
+
+{% block back_button %}
+    <div class="back_button" onclick="window.location.href = '{% url 'sections' %}' ">
+        <img src="{% static 'css/svgs/back_icon.svg' %}" alt="back_icon">
+    </div>
+{% endblock back_button %}
+
+
+{% block content %}
+    <!-- بدء المحتوى -->
+    <div class="add_item">
+        {% include 'parts/confirm_delete.html' %}
+        
+        <div class="items_container">
+            <form method="post" action="">
+            {% csrf_token %}
+                <h1>Add new product</h1>
+                <h2 class='section_name_h2'>{{section_name}}</h2>
+                {{form.product_name}}
+                {{form.product_buy}}
+                {{form.product_sell}}
+                {{form.product_tax}}
+                <button type="button" id="total_button" class="total_button">total:</button>
+                
+                {{form.product_category}}
+                {{form.product_count}}
+                               
+                <button type="button" onclick='getUpdate()' id="submit_button" class="submit_button">{% if is_update %}Update{% else %}Add{% endif %}</button>
+            
+            </form>
+                <input id='search_input' type='text' onkeyup='getSearch()' placeholder='Search by name or local-id'></input>
+            
+
+            <table>
+                <thead class="items_thead">
+                    <tr>
+                        <th>id</th>
+                        <th>item-name</th>
+                        <th>Buy</th>
+                        <th>Sell</th>
+                        <th>Taxes</th>
+                        <th>category</th>
+                        <th>Count</th>
+                        <th>total</th>
+                        <th>local-id</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                
+                <tbody class="items_tbody">
+                </tbody>
+
+            </table>   
+        </div>
+    </div>
+    <!-- نهاية المحتوى -->
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/add_product.js' %}"></script>
+{% endblock extra_js %}
+
+

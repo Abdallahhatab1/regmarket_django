@@ -1,0 +1,21 @@
+/* بداية زر الرجوع */
+.back_button{
+    position: fixed;
+    background-color: #154;
+    border-radius: 0px 0px 10px 0px;
+    top: 0;
+    left: 0;  
+    width: 70px;
+    height: 65px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 100;
+    border: solid 2px #043;
+    z-index: 99;
+}
+
+.back_button:hover{
+    background-color: #043;
+    transform: scale(1.05);
+}
+/* نهاية زر الرجوع */

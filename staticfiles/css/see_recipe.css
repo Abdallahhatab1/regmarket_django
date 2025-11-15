@@ -1,0 +1,117 @@
+body{
+    color: #fff;
+    background-color: #dff;
+}
+
+.items_container{
+    width: 90%;
+    margin: auto;
+}
+
+.add_item{
+    box-shadow: 1px 1px 5px black;
+    width: 80%;
+    height: fit-content;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 20px 0px 70px 0px;
+    background-color: #055;
+    text-align: center;
+
+}
+
+
+.items_thead th {
+    padding: 50px 0px 10px 0px;
+    text-align: center;
+}
+
+.items_container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.items_tbody tr {
+    padding: 10px 0px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    background-color: #044;
+}
+
+.items_tbody tr td{
+    padding: 20px 5px;
+}
+
+
+
+button{
+    font-size: 22px;
+    width: 100%;
+    height: 45px;
+    border-radius: 7px;
+    border: none;
+    background: #076;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover{
+    background: #065;
+    transform: scale(1.03);
+}
+
+
+/* بداية زر الرجوع */
+.back_button{
+    position: fixed;
+    background-color: #154;
+    border-radius: 0px 0px 10px 0px;
+    top: 0;
+    left: 0;  
+    width: 70px;
+    height: 65px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 100;
+    border: solid 2px #043;
+    z-index: 99;
+}
+
+.back_button:hover{
+    background-color: #043;
+    transform: scale(1.05);
+}
+/* نهاية زر الرجوع */
+
+
+input{
+    width: 90%;
+    padding: 7px;
+    margin: 10px;
+    border-radius: 10px;
+    background: #044;
+    border: 1px #fff5 solid;
+    font-size: 23px;
+    color: white;
+}
+
+.numbers_inputs_div{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 92%;
+}
+
+.numbers_inputs{
+    margin: 0;
+    width: 30%;
+}
+
+#submit_button{
+    margin: 0;
+    padding: 0;
+    width: 91%;
+}
+
+

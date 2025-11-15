@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Regmarket | Signup{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock extra_css %}
+
+{% block sidebar %}
+    {% include 'parts/sidebar.html' %}
+{% endblock sidebar %}
+
+
+
+{% block content %}
+    <!-- المحتوى -->
+    <div class="container">
+        <header>
+            <h1 class="title_h1">Sign Up</h1>
+            <h3 class="title_h3">Regmarket is a best simple system to your market !</h3>
+        </header>
+
+
+    <div class="inputes_div">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="inputes">
+                    <label>Market Image:{{form.image}}</label>
+                    <label>Background: Image:{{form.background}}</label>
+                    <label>First Name:{{form.first_name}}</label>
+                    <label>Last Name:{{form.last_name}}</label>
+                    <label>Username:{{form.username}}</label>
+                    <label>Email:{{form.email}}</label>
+                    <label>Password:{{form.password1}}</label>
+                    <div class="points">
+                    <p class="point_p" id="point_1" title="Minimum of 8 characters">●</p>
+                    <p class="point_p" id="point_2" title="At least one uppercase letter">●</p>
+                    <p class="point_p" id="point_3" title="At least one lowercase letter">●</p>
+                    <p class="point_p" id="point_4" title="At least one number">●</p>
+                    <p class="point_p" id="point_5" title ="At least one special character">●</p>
+                    </div>
+                    <label>Confirm Password:{{form.password2}}</label>
+                    <label>Gender:{{form.gender}}</label>
+                    <label>Birthdate:{{form.birthdate}}</label>
+                    <label>market name:{{form.market_name}}</label>
+
+                    <div class="button">
+                        <button id="submit_button" disabled>Register</button>
+                    </div>
+                </div> 
+
+            </form>
+            
+            
+            <div class="account_ask">
+                <a href="{% url 'login' %}">
+                     <h3>Do you have account on RegLMarket? Log in</h3>
+                </a>
+            </div>
+        </div>
+    </div> 
+
+    <footer class='copyright_container'>
+        <p>© 2025 RegMarket - All rights reserved.</p>
+        <a href="{% url 'privacy_policy' %}">Privacy Policy</a> |
+        <a href="{% url 'terms' %}">Terms of Use</a>
+    </footer>
+
+
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/signup.js' %}"></script>
+{% endblock extra_js %}
+
+  

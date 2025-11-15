@@ -1,0 +1,66 @@
+
+body{
+    color: white;
+}
+
+.close_sidebar{
+    position: fixed;
+    background: url('../css/svgs/three_dash.svg') no-repeat;
+    background-color: #154;
+    border-radius: 0px 0px 10px 0px;
+    top: 0;
+    left: 0;  
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+.close_sidebar:hover{
+  background-color: #043;
+}
+
+.open_sidebar{
+
+    position: fixed;
+    background-color: #154;
+    border-radius: 0px 0px 10px 0px;
+    top: 0;
+    left: 0;  
+    width: 200px;
+    height: 495px;
+    left: -200px;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+
+.cell-content h2{
+    width: 100px;
+}
+
+.cell-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(100px / 7) 20px;
+  transition: 0.2s;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #032;
+}
+
+.cell-content:hover {
+    cursor: pointer;
+    background-color: #043;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+}

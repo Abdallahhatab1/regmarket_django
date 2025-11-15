@@ -1,0 +1,151 @@
+body{
+    color: #fff;
+    background-color: #dff;
+}
+
+.items_container{
+    width: 90%;
+    margin: auto;
+}
+
+.add_item{
+    box-shadow: 1px 1px 5px black;
+    width: 90%;
+    height: fit-content;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 20px 0px 40px 0px;
+    background-color: #055;
+
+}
+
+h1{
+    margin: auto;
+    width: fit-content;
+}
+
+input{
+
+    font-size: 22px;
+    width: 100%;
+    height: 35px;
+    border-radius: 7px;
+    border: none;
+    margin: 5px;
+    background: #033;
+    color: white;
+    border: 1px #fff5 solid;
+    transition: 0.2s;
+}
+
+input:hover{
+    transform: scale(1.01);
+}
+
+button{
+    width: 100%;
+    margin: 5px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background: #076;
+    color: white;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.delete, .update{
+    width: 90%;
+}
+
+button:hover{
+    background: #065;
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+input::placeholder{
+
+    font-size: 20px;
+    padding: 10px;
+}
+
+table{
+    width: 100%;
+}
+
+.items_thead tr th{
+    padding: 15px 0px 5px 0px;
+}
+
+.items_tbody tr{
+    padding: 10px 0px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    background-color: #044;
+}
+
+.items_tbody tr:hover{
+    transform: scale(1.01);
+    background-color: #033;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* تأكيد حذف العناصر */
+.sure_delete{
+    display: none;
+    position: fixed;
+    background-color: #7775;
+    width: 60%;
+    height: 40%;
+    top: 30%;
+    left: 20%;
+    border-radius: 10px;
+    z-index: 102;
+}.sure_delete h1{
+    padding: 30px;
+}#sure_yes{
+    background: #0a0;
+}#sure_no{
+    background: #a00;
+}#sure_yes:hover{
+    background: #080;
+}#sure_no:hover{
+    background: #800;
+}.sure_buttons{
+    text-align: center;
+    padding:10px 0px 20px 0px;
+    width: 30%;
+    height: 16%;
+    margin: 12.5% 0px 0px 12.5%;
+    font-size: 27px;
+    transition: 0.2s;
+}.blur_screen{
+    display: none;
+    position:fixed;
+    backdrop-filter: blur(3px);
+    background: #000e;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 101;
+}.back_button{
+    position: fixed;
+    background-color: #154;
+    border-radius: 0px 0px 10px 0px;
+    top: 0;
+    left: 0;  
+    width: 70px;
+    height: 65px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 100;
+    border: solid 2px #043;
+    z-index: 99;
+}.back_button:hover{
+    background-color: #043;
+    transform: scale(1.05);
+}
+/* نهاية تأكيد حذف العناصر */

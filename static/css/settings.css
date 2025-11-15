@@ -1,0 +1,33 @@
+body{
+    color: #fff;
+    background-color: #dff;
+}
+
+
+
+.container{
+    box-shadow: 1px 1px 5px black;
+    width: 90%;
+    height: fit-content;
+    margin: 20px auto;
+    padding: 20px 0px 40px 0px;
+    background-color: #055;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.sections{
+    width: 90%;
+    margin: 10px auto;
+    background-color: #033;
+    border: white 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.sections:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+    transition: 0.2s;
+}

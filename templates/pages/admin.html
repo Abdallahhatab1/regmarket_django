@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}RegMarket | Admins{% endblock %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock extra_css %}
+
+
+{% block back_button %}
+    <div class="back_button" onclick="window.location.href = '{% url 'peoples' %}' ">
+        <img src="{% static 'css/svgs/back_icon.svg' %}" alt="back_icon">
+    </div>
+{% endblock back_button %}
+
+
+{% block confirm_delete %}
+    {% include 'parts/confirm_delete.html' %}
+{% endblock confirm_delete %}
+
+
+{% block content %}
+    <div class="add_item">
+        <div class="items_container">
+
+            <form id='adminForm' action="" method="post">
+                {% csrf_token %}
+                <h1>add new admin</h1>
+                
+                <h3>{{form.first_name.label}}</h3>
+                {{form.first_name}}
+
+                <h3>{{form.last_name.label}}</h3>
+                {{form.last_name}}
+
+
+                <h3>{{form.birthdate.label}}</h3>
+                {{form.birthdate}}
+
+                <div class='range_container'>
+                <h3 class='range_h3'>{{form.available_hours.label}}</h3>
+                {{form.available_hours}}
+                <h3 class='range_h3_2'></h3>
+                </div>
+
+
+                <h3>{{form.salary.label}}</h3>
+                {{form.salary}}
+                
+
+                {{form.gender}}
+
+             
+                <button type="submit" onclick='SubmitUpdate()' onsubmit='add_item(event)' id="submit_button" class="submit_button">{% if is_update %}Update{% else %}Add{% endif %}</button>
+                <button type="button" onclick="delete_all()" id="submit_button" class="delete_all_button">Delete All ({{admins|length}})</button>
+
+                <input onkeyup="search_admin()" id="search_input" type="text" placeholder="search">
+                    <div class="search_buttons">
+                        <button type="button" onclick="search_mode_name()" id="name_search_button" class="searchByName">Search by name</button>
+                        <button type="button" onclick="search_mode_surname()" id="surname_search_button" class="searchBySurname">Search by surname</button>
+                    </div>
+            </form>
+
+            
+            
+                <table>
+                <thead class="items_thead">
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>surname</th>
+                        <th>birthdate</th>
+                        <th>gender</th>
+                        <th>salary</th>
+                        <th>available</th>
+                        <th>join-date</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                
+                <tbody class="items_tbody">
+                {% for i in admins %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.first_name}}</td>
+                        <td>{{i.last_name}}</td>
+                        <td>{{i.birthdate|date:'Y-m-d'}}</td>
+                        <td>{{i.gender}}</td>
+                        <td>{{i.salary}}</td>
+                        <td>{{i.available_hours}}h</td>
+                        <td>{{ i.join_date|date:"Y-m-d"}}</td>
+                        <td><button type='button' onclick="update_admin(this)" class="update" id={{i.id}}>update</button></td>
+                        <td><button type='button' onclick="delete_admin(this)" class="delete" id={{i.id}}>delete</button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>   
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/admin.js' %}"></script>
+{% endblock extra_js %}
+
+

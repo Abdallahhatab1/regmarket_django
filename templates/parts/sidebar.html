@@ -1,0 +1,89 @@
+{% load static %}
+    
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'include/sidebar.css' %}">
+    <!-- +=========+ -->
+
+    <!-- بدء السايد بار -->
+    <div onclick="start_open()" class="close_sidebar"></div>
+    <div class="open_sidebar">
+        <div class="sidebar_items">
+           <table>
+                <tbody>
+                    <tr>
+                        <a href="{% url 'home' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/home_icon.svg' %}" alt="home_icon">
+                                <h2>Home</h2>
+                            </div>
+                        </a>
+                        <hr>
+
+                        <a href="{% url 'peoples' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/admin_icon.svg' %}" alt="admin_icon">
+                                <h2>Peoples</h2>
+                            </div>
+                        </a>
+                        
+                        <hr>
+                        <a href="{% url 'sections' %}">
+                            <div class="cell-content">
+                                
+                                <img src="{% static 'css/svgs/food_icon.svg' %}" alt="food_icon">
+                                <h2>Sections</h2>
+                            </div>
+                        </a>
+                        <hr>
+
+                        <a href="{% url 'statisitics' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/statistics_icon.svg' %}" alt="statistics_icon">
+                                <h2>Statisitics</h2>
+                            </div>
+                        </a>
+                        <hr>
+
+                        <a href="{% url 'settings' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/settings_icon.svg' %}" alt="settings_icon">
+                                <h2>Settings</h2>
+                            </div>
+                        </a>
+                        <hr>
+
+                        <a href="{% url 'profile' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/profile_icon.svg' %}" alt="statistics_icon">
+                                <h2>Profile</h2>
+                            </div>
+                        </a>
+
+                        {% if user.is_authenticated %}
+                        <hr>
+                        <a href="{% url 'logout' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/logout_icon.svg' %}" alt="login_icon">
+                                <h2>Log out</h2>
+                            </div>
+                        </a>
+                        {% else %}
+                         <a href="{% url 'login' %}">
+                            <div class="cell-content">
+                                <img src="{% static 'css/svgs/login_icon.svg' %}" alt="login_icon">
+                                <h2>Log in</h2>
+                            </div>
+                        </a>
+                        {% endif %}
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- نهاية السايد بار -->
+
+    <!-- js -->
+    <script src="{% static 'js/sidebar.js' %}"></script>
+    <!-- +====+ -->

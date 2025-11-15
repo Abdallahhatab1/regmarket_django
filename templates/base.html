@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- عنوان الصفحة -->
+    <title>{% block title %}RegMarket{% endblock %}</title>
+
+    <!-- ملفات CSS المشتركة -->
+    <link rel="stylesheet" href="{% static 'include/global.css' %}">
+
+    <!-- CSS خاص بكل صفحة -->
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+
+<body>
+
+    
+<!-- تأكيد الحذف -->
+{% block confirm_delete %}
+{% endblock confirm_delete %}
+
+
+<!-- زر الرجوع -->
+{% block back_button %}
+{% endblock back_button %}
+
+
+<!-- السايد بار -->
+{% block sidebar %}
+{% endblock sidebar %}
+
+
+<!-- المحتوى -->
+{% block content %}
+{% endblock content %}
+
+
+
+<script src="{% static 'include/global.js' %}"></script>
+{% block extra_js %}{% endblock extra_js %}
+
+
+</body>
+</html>

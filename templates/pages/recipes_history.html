@@ -1,0 +1,62 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/recipes_history.css' %}">
+    <link rel="stylesheet" href="{% static 'include/confirm_delete.css' %}">
+{% endblock extra_css %}
+
+{% block back_button %}
+    <div class="back_button" onclick="window.location.href = '{% url 'settings' %}' ">
+        <img src="{% static 'css/svgs/back_icon.svg' %}" alt="back_icon">
+    </div>
+{% endblock back_button %}
+
+{% block content %}
+    <!-- المحتوى -->
+    <div class="home">
+        <div class="container">
+
+
+            <div class="sections">
+                <input onkeyup="getSearch()" type="text" id="search_input" placeholder="search by date or total">
+                <button class='delete_all' onclick='delete_all()'>delete all (...)</button>
+            </div>
+
+            <table>
+                
+                <thead class="items_thead">
+                    <tr>
+                        <th>id</th>
+                        <th>Receipts-date</th>
+                        <th>Total-price</th>
+                        <th>Total-tax</th>
+                        <th>Total-discount</th>
+                        <th>total</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+
+                <tbody class="items_tbody">
+                </tbody>
+            </table>
+
+                        <!-- بداية تأكيد الحذف -->
+            <div class="blur_screen"></div>
+            <div class="sure_delete">
+                    <h1>Are you sure?</h1>
+                    <button onclick="sure_choise_yes()" class="sure_buttons" id="sure_yes">Yes</button>
+                    <button onclick="sure_choise_no()" class="sure_buttons" id="sure_no">No</button>
+            </div>
+            <!-- نهاية تأكيد الحذف -->
+                        
+
+        </div>
+    </div>
+    <!-- نهاية المحتوى -->
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="/static/js/recipes_history.js"></script>
+    <script src="/static/include/global.js"></script>
+{% endblock extra_js %}

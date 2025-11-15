@@ -1,0 +1,136 @@
+.container{
+    width: 80%;
+    height: fit-content;
+    margin: 30px auto 0px auto;
+    background: #055;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px gray;
+    padding: 40px;
+    padding-bottom: 60px;
+    border: #022 2px solid;
+}
+
+
+header{
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    background: #044;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    border: #fff3 1px solid;
+}
+
+.title_h3{
+    padding-top: 10px;
+}
+
+
+.inputes_div{
+    width: 80%;
+    margin: auto;
+}
+
+.inputes{
+    width: 100%;
+    margin:20px -20px;
+    background-color: #044;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: #fff3 1px solid;
+}
+
+input, button{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #033;
+    border: none;
+    color: white;
+    width: 75%;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+label{
+    display: flex;
+    justify-content: space-between;
+    margin:10px 0px;
+    font-size: 20px;
+    border: #fff4 solid 1px;
+    border-radius: 10px;
+    padding: 0px 0px 0px 10px;
+        align-items: center;
+
+}
+
+button{
+    background: #076;
+    font-size: 23px;
+    transition: 0.2s;
+    border: 1px solid #fff5;
+
+}
+
+.button{
+    display: flex;
+    justify-content:space-around;
+    padding-top: 20px;
+}
+
+button:hover{
+    transform: scale(1.03);
+    background: #065;
+    cursor: pointer;
+}
+
+.account_ask{
+    text-align: center;
+    color: white;
+    text-decoration: underline 2px;
+}
+
+
+.select_gender{
+    color: white;
+    background: #033;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    width: 60%;
+    margin: auto;
+    font-size: 23px;
+
+}
+
+.points {
+    display: flex;
+    background-color: #5555;
+    border-radius: 10px;
+    justify-content: space-around;
+    width: 75%;
+    margin: 0px 0px 20px auto;
+}
+
+.point_p {
+    color: red;
+    cursor: pointer;
+}
+
+
+.copyright_container {
+    width: fit-content;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 17px;
+    font-weight: 700;
+
+    color: black;
+}
+
+.copyright_container a {
+    color: blue;
+    font-weight: 500;
+}

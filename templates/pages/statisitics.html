@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Regmarket | Statisitics{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/statisitics.css' %}">
+
+{% endblock extra_css %}
+
+{% block sidebar %}
+    {% include 'parts/sidebar.html' %}
+{% endblock sidebar %}
+
+{% block content %}
+    <div class="home">
+        <div class="container">
+
+            <div class="sections">
+                <img src="/static/css/svgs/statistics_big_icon.svg" alt="change_currency_icon">
+                <h1>Statisitics</h1>
+            </div>
+
+            <table>
+                <tbody class="items_tbody" id='items_tbody_top'>  
+                </tbody>
+
+                <tbody class="items_tbody" id='items_tbody_bottom'>  
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/statisitics.js' %}"></script>
+{% endblock extra_js %}

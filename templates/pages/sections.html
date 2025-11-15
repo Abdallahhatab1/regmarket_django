@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}RegMarket | Sections{% endblock %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/sections.css' %}">
+{% endblock extra_css %}
+
+
+{% block confirm_delete %}
+    {% include 'parts/confirm_delete.html' %}
+{% endblock confirm_delete %}
+
+
+{% block back_button %}
+{% endblock back_button %}
+    
+
+{% block sidebar %}
+    {% include 'parts/sidebar.html' %}
+{% endblock sidebar %}
+
+
+{% block content %}
+    <div class="add_item">
+
+        <div class="items_container">
+            
+            <form method="post">
+                {% csrf_token %}
+                
+                <h1>add a section</h1>
+                
+                {{form}}
+                <button type="submit" id="submit_button" class="submit_button">
+                {% if is_update %}Update{% else %}Add{% endif %}</button>
+                <button type="button" onclick="delete_all()" id="delete_button" class="delete_button">Delete all (...)</button>
+            </form>
+
+            <table>
+                <thead class="items_thead">
+                    <tr>
+                        <th>id</th>
+                        <th>section-name</th>
+                        <th>Total-buy</th>
+                        <th>Total-sell</th>
+                        <th>Total-taxes</th>
+                        <th>Total-count</th>
+                        <th>Section-category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                
+                <tbody class="items_tbody">
+                </tbody>
+
+            </table>   
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/sections.js' %}"></script>
+{% endblock extra_js %}

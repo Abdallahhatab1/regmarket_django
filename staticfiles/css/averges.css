@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: flex-end;
+
+  min-width: fit-content;
+  max-width: 97.5vw;
+
+  min-height: 97.5vh;
+  background: #065;
+  padding: 0 30px;
+  margin: auto;
+}
+
+.wrapper {
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.base {
+  text-align: center;
+  position: relative;
+  width: 45px;
+  height: 85vh;
+  background: #333;
+  border: 1px solid #666;
+  top: -2.5vh;
+  color: #ccc;
+  padding: 0px 10px;
+
+}
+
+.building {
+  position: absolute;
+  bottom: 0px;
+  width: 45px;
+  height: 100px;
+  background: green;
+  color: white;
+  text-align: center;
+}
+
+.header{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 40vw;
+    color: white;
+    
+}
+
+
+.h5_build_price{
+  position: fixed;
+  padding-bottom: 10px;
+  width: 45px;
+  background: #4446;
+  border-radius: 10px;
+  color: #5ed1ff;
+  z-index: 100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* بداية زر الرجوع */
+.back_button{
+    position: fixed;
+    background-color: #154;
+    border-radius: 0px 0px 10px 0px;
+    top: 0;
+    left: 0;  
+    width: 70px;
+    height: 65px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 100;
+    border: solid 2px #043;
+    z-index: 99;
+}
+
+.back_button:hover{
+    background-color: #043;
+    transform: scale(1.03);
+}
+/* نهاية زر الرجوع */

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}RegMarket | Home{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'include/confirm_delete.css' %}">
+{% endblock extra_css %}
+
+{% block back_button %}{% endblock back_button %}
+    
+{% block sidebar %}
+    {% include 'parts/sidebar.html' %}
+{% endblock sidebar %}
+
+
+{% block content %}
+    <!-- المحتوى -->
+    <div class="home">
+        <div class="container">
+            <div class="header">
+                <div class='header_name'>
+                    <h2>RegMarket</h2>
+                    <p>Start Your business deal.</p>
+                </div>
+
+                <div class="body_name">
+                    <div class="items_content" id="items_count">
+                        <div class="items_squares">
+                            <h2>Items count</h2>
+                            <h2 id='items_count_h2'>0</h2>
+                        </div>
+                        
+                    </div>
+
+                    <div class="items_content" id="items_total" onclick='change_currency()'>
+                        <div class="items_squares"  id='currency_base'>
+
+                            <h1 id="total_recipe">0<span id='total_recipe_span'>...</span></h1>
+                            <p id="to_pound">0<span id='to_pound_span'>...</span></p>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="items_content" id="customer_name">
+                        <div class="items_squares">
+                            <h2>Customer name</h2>
+                            <h3 id="customer_name_section">null</h3>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+            <div class="add_item">
+                <!-- بداية تأكيد الحذف -->
+                <div class="blur_screen"></div>
+                <div class="sure_delete">
+                        <h1>Are you sure?</h1>
+                        <button onclick="sure_choise_yes()" class="sure_buttons" id="sure_yes">Yes</button>
+                        <button onclick="sure_choise_no()" class="sure_buttons" id="sure_no">No</button>
+                </div>
+                <!-- نهاية تأكيد الحذف -->
+                
+                <div class="items_container">
+                    <h1>Add item</h1>
+                    <input onkeydown="getAddReturnClick(event)" id='idname_input' type="text" placeholder="Add product (ID or Name)">
+                    
+
+                <input onkeyup="search_customer()" id='customer_search_input' type="text" placeholder="search customer (local-id or Name)"> 
+                <table>
+                    
+                    <thead class="customer_thead">
+                        <tr>
+                            <th>name</th>
+                            <th>surname</th>
+                            <th>birthdate</th>
+                            <th>gender</th>
+                            <th>join-date</th>
+                            <th>local-id</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="customer_tbody">
+                    </tbody>
+
+                </table>
+
+                    <div class="numbers_div">
+                        <input class='number_inputs' id='price_input' type="number" placeholder="Price">
+                        <input class='number_inputs' id='taxes_input' type="number" placeholder="Taxes">
+                        <input class='number_inputs' id='discount_input' type="number" placeholder="Discount">
+                    </div>
+
+                    <input id='category_input' type="text" placeholder="Category">
+
+                    <input id='count_input' type="number" placeholder="Count">
+                    
+
+                    <button onclick="add_item()" id='add_button'>add product</button>
+                    <button onclick="delete_all()" id='delete_all_button'>delete all (0)</button>
+                    <button onclick="save_recipe()" id='save_recipe_button'>save</button>
+
+                    <input onkeyup="search_item()" id='search_input' type="text" placeholder="search">
+                    <div class="search_div">
+    
+                        <button onclick="search_id_mode()" id='search_by_id'>search by local-id</button>
+                        <button onclick="search_name_mode()" id='search_by_name'>search by name</button>
+                    </div>
+
+                    <table>
+                        <thead class="items_thead">
+                             <tr>
+                                <th>id</th>
+                                <th>item-name</th>
+                                <th>price</th>
+                                <th>Taxes</th>
+                                <th>discount</th>
+                                <th>category</th>
+                                <th>count</th>
+                                <th>total</th>
+                                <th>local-id</th>
+                                <th>update</th>
+                                <th>delete</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id='items_tbody' class="items_tbody">
+                         
+                        </tbody>
+                        
+                    </table>   
+                </div>
+            </div>
+
+            <footer class='copyright_container'>
+                <p>© 2025 RegMarket - All rights reserved.</p>
+                <a href="{% url 'privacy_policy' %}">Privacy Policy</a> |
+                <a href="{% url 'terms' %}">Terms of Use</a>
+            </footer>
+
+        </div>
+    <!-- نهاية المحتوى -->
+
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock extra_js %} 

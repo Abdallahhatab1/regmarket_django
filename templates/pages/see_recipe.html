@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Regmarket | Show Recetpt{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/see_recipe.css' %}">
+    <link rel="stylesheet" href="{% static 'include/global.css' %}">
+{% endblock extra_css %}
+
+{% block back_button %}
+    <div class="back_button" onclick="window.location.href = '{% url 'current_receipts' dayIndex %}' ">
+        <img src="{% static 'css/svgs/back_icon.svg' %}" alt="back_icon">
+    </div>
+{% endblock back_button %}
+
+
+{% block content %}
+    <!-- المحتوى -->
+    <div class="home">
+
+        <div class="add_item">
+            <h1 class="title_h1">Show Receipt</h1> 
+            <div class="items_container">    
+
+                <div class="inputes">
+                
+                <form method='post' action=''>
+                    {% csrf_token %}
+                    {{form.product_name}}
+
+                    <div class="numbers_inputs_div">
+                       {{form.price}}
+                       {{form.tax}}
+                       {{form.discount}}
+                    </div>
+
+                    {{form.category}}
+                    {{form.count}}
+                
+                    <button type='submit' onkeyup="getUpdateEnter(event)" onclick='submit_update()' id="submit_button" type="button">Submit</button>
+                
+                </form>
+
+                </div>
+
+              
+                <table>
+                    <thead class="items_thead">
+                        <tr>
+                            <th>id</th>
+                            <th>item-name</th>
+                            <th>price</th>
+                            <th>tax</th>
+                            <th>discount</th>
+                            <th>category</th>
+                            <th>count</th>
+                            <th>local-id</th>
+                            <th>total</th>
+                            <th>update</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id='items_tbody' class="items_tbody">  
+                          <tr>
+                            <td>id</td>
+                            <td>item-name</td>
+                            <td>price</td>
+                            <td>tax</td>
+                            <td>discount</td>
+                            <td>category</td>
+                            <td>count</td>
+                            <td>local-id</td>
+                            <td>total</td>
+                            <td><button>update</button></td>
+                            <td><button>delete</button></td>
+                        </tr> 
+                    </tbody>
+
+                </table>   
+            </div>
+        </div>
+    </div>
+    <!-- نهاية المحتوى -->
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/see_recipe.js' %}"></script>
+    <script src="{% static 'include/global.js' %}"></script>
+{% endblock extra_js %}

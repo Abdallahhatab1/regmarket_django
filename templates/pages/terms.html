@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}RegMarket | Terms of Use{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/terms.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+    <h1>Terms of Use</h1>
+    <p><strong>Effective Date:</strong> 2025</p>
+
+    <p>Welcome to <strong>RegMarket</strong>. These Terms of Use ("Terms") govern your access to and use of the RegMarket website and services (the "Service"). By accessing or using the Service you agree to be bound by these Terms. If you do not agree with any part of these Terms, do not use the Service.</p>
+
+    <h2>1. About the Service</h2>
+    <p>RegMarket is a store management system for managing sales, purchases, and related store operations. The Service is not a public marketplace; user accounts are private and account data is accessible only by the account owner and RegMarket as described below.</p>
+
+    <h2>2. Account Registration and Eligibility</h2>
+    <p>To use certain features you must register an account. You represent and warrant that you are at least 13 years old and that the information you provide during registration is accurate and complete. You are responsible for maintaining the confidentiality of your account credentials.</p>
+
+    <h2>3. User Responsibilities</h2>
+    <p>You agree to use the Service lawfully and not to:</p>
+    <ul>
+        <li>Impersonate another person or misrepresent your affiliation with any person or entity;</li>
+        <li>Attempt to access other users' accounts or data; RegMarket does not permit users to access other users' private files;</li>
+        <li>Interfere with, damage, or disrupt the Service or servers or networks connected to the Service;</li>
+        <li>Use the Service to store or distribute illegal content.</li>
+    </ul>
+
+    <h2>4. Data and Account Information</h2>
+    <p>By registering you provide personal and account information (for example: name, email address, password, profile photo, store data, and other account-related information). You grant RegMarket a non-exclusive license to use such information as necessary to provide the Service.</p>
+
+    <h2>5. Privacy and Security</h2>
+    <p>RegMarket stores and processes account data to operate the Service. RegMarket implements reasonable technical and organizational measures to protect account data; however no system is completely secure. For details about the data we collect and how we use it, see our <a href="{% url 'privacy_policy' %}">Privacy Policy</a>.</p>
+
+    <h2>6. Account Deletion and Data Removal</h2>
+    <p>Account owners may request deletion of their account and personal data. Upon request RegMarket will remove the user's personal data in accordance with the Privacy Policy and these Terms, subject to any legal retention obligations.</p>
+
+    <h2>7. Intellectual Property</h2>
+    <p>All content, design, code, and materials provided by RegMarket are owned by or licensed to RegMarket. You may not copy, reproduce, or distribute RegMarket's content without prior written consent.</p>
+
+    <h2>8. Third-Party Services</h2>
+    <p>RegMarket does not use third-party analytics, payment processors, or marketing services unless explicitly stated. If RegMarket integrates third-party services in the future, we will notify users and update the Privacy Policy accordingly.</p>
+
+    <h2>9. Disclaimer of Warranties</h2>
+    <p>The Service is provided "as is" and "as available" without warranties of any kind. RegMarket disclaims all warranties, whether express or implied, including merchantability, fitness for a particular purpose, and non-infringement.</p>
+
+    <h2>10. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, RegMarket and its affiliates, officers, employees, or partners shall not be liable for any indirect, incidental, consequential, special, or punitive damages arising out of or related to your use of the Service.</p>
+
+    <h2>11. Termination</h2>
+    <p>RegMarket may suspend or terminate access to the Service at any time for any reason, including if you breach these Terms. You may also close your account at any time. Termination does not affect accrued rights or liabilities.</p>
+
+    <h2>12. Changes to Terms</h2>
+    <p>We may amend these Terms from time to time. Material changes will be posted on the website. Continued use of the Service after changes indicates acceptance of the updated Terms.</p>
+
+    <h2>13. Contact</h2>
+    <p>If you have questions about these Terms, contact us at: <a href="mailto:abdaabdahbhb@gmail.com">abdaabdahbhb@gmail.com</a>.</p>
+
+    <footer>
+
+        <p><a href="{% url 'login' %}" >RegMarket Login</a></p>
+        <p>© 2025 RegMarket – All rights reserved. | <a href="{% url 'privacy_policy' %}">Privacy Policy</a></p>
+    </footer>
+{% endblock content %}

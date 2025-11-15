@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}RegMarket | Peoples{% endblock %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/peoples.css' %}">
+{% endblock extra_css %}
+
+
+{% block back_button %}
+{% endblock back_button %}
+
+
+{% block sidebar %}
+    {% include "parts/sidebar.html" %}
+{% endblock sidebar %}
+
+{% block content %}
+    <div class="add_item">
+        <div class="items_container">
+            <table>
+                <form action="submit" method="get"></form>
+                    <h1>choose a section</h1>
+                    <button onclick=" window.location.href='{% url 'admin' %}' " class="submit_button">Admins</button>
+
+                    <button onclick=" window.location.href='{% url 'customer' %}' " type="button" class="submit_button" id="customers">Customers</button>
+                </form>
+            </table>   
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/peoples.js' %}"></script>
+{% endblock extra_js %}
